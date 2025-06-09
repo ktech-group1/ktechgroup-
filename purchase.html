@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Fuel - KTech Group</title>
+    <link rel="stylesheet" href="styles2[1].css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>KTech Group</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="newsletter.html">Newsletter</a></li>
+                    <li><a href="purchase.html" class="active">Purchase Fuel</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Purchase Fuel</h1>
+                <p>Complete your fuel order with our secure transaction system</p>
+            </div>
+        </section>
+
+        <section class="purchase-section">
+            <div class="container">
+                <div class="purchase-wrapper">
+                    <div class="fuel-selection">
+                        <h2>Select Your Fuel</h2>
+                        <div class="fuel-options">
+                            <div class="fuel-card" data-fuel="furnacefuel" data-price="850">
+                                <div class="fuel-icon">🔥</div>
+                                <h3>Furnace Fuel</h3>
+                                <p class="fuel-price">₦850 per liter</p>
+                                <p class="fuel-desc">High-grade furnace fuel for industrial use</p>
+                                <button class="select-fuel-btn">Select</button>
+                            </div>
+                            <div class="fuel-card" data-fuel="kiln fuel" data-price="750">
+                                <div class="fuel-icon">⛽</div>
+                                <h3>Kiln Fuel</h3>
+                                <p class="fuel-price">₦750 per liter</p>
+                                <p class="fuel-desc">Premium unleaded kiln fuel</p>
+                                <button class="select-fuel-btn">Select</button>
+                            </div>
+                            <div class="fuel-card" data-fuel="boiler fuel" data-price="650">
+                                <div class="fuel-icon">⛽</div>
+                                <h3>Boiler Fuel</h3>
+                                <p class="fuel-price">₦650 per liter</p>
+                                <p class="fuel-desc">Clean burning boiler fuel</p>
+                                <button class="select-fuel-btn">Select</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="purchase-form">
+                        <h2>Order Details</h2>
+                        <form id="purchase-form" action="#" method="POST">
+                            <div class="form-section">
+                                <h3>Customer Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="customer-name">Full Name *</label>
+                                        <input type="text" id="customer-name" name="customer-name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="company-name">Company Name *</label>
+                                        <input type="text" id="company-name" name="company-name" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="customer-email">Email Address *</label>
+                                        <input type="email" id="customer-email" name="customer-email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="customer-phone">Phone Number *</label>
+                                        <input type="tel" id="customer-phone" name="customer-phone" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="delivery-address">Delivery Address *</label>
+                                    <textarea id="delivery-address" name="delivery-address" rows="3" required></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Order Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="selected-fuel">Fuel Type *</label>
+                                        <input type="text" id="selected-fuel" name="selected-fuel" readonly required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="fuel-quantity">Quantity (Liters) *</label>
+                                        <input type="number" id="fuel-quantity" name="fuel-quantity" min="50" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="delivery-date">Preferred Delivery Date *</label>
+                                        <input type="date" id="delivery-date" name="delivery-date" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="delivery-time">Preferred Time</label>
+                                        <select id="delivery-time" name="delivery-time">
+                                            <option value="">Select Time</option>
+                                            <option value="8am-10am">8:00 AM - 10:00 AM</option>
+                                            <option value="10am-12pm">10:00 AM - 12:00 PM</option>
+                                            <option value="12pm-2pm">12:00 PM - 2:00 PM</option>
+                                            <option value="2pm-4pm">2:00 PM - 4:00 PM</option>
+                                            <option value="4pm-5pm">4:00 PM - 5:00 PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="special-instructions">Special Instructions</label>
+                                    <textarea id="special-instructions" name="special-instructions" rows="3" placeholder="Any special delivery instructions..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="order-summary">
+                                <h3>Order Summary</h3>
+                                <div class="summary-row">
+                                    <span>Fuel Type:</span>
+                                    <span id="summary-fuel">-</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Quantity:</span>
+                                    <span id="summary-quantity">0 liters</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Unit Price:</span>
+                                    <span id="summary-price">₦0</span>
+                                </div>
+                                <div class="summary-row subtotal">
+                                    <span>Subtotal:</span>
+                                    <span id="summary-subtotal">₦0</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Delivery Fee:</span>
+                                    <span id="summary-delivery">₦5,000</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <span>Total Amount:</span>
+                                    <span id="summary-total">₦0</span>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Payment Method</h3>
+                                <div class="payment-options">
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment-method" value="bank-transfer" required>
+                                        <span class="payment-label">
+                                            <strong>Bank Transfer</strong>
+                                            <small>Pay via bank transfer (Account details will be provided)</small>
+                                        </span>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment-method" value="cash-on-delivery" required>
+                                        <span class="payment-label">
+                                            <strong>Cash on Delivery</strong>
+                                            <small>Pay when fuel is delivered (Additional charges may apply)</small>
+                                        </span>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment-method" value="company-credit" required>
+                                        <span class="payment-label">
+                                            <strong>Company Credit</strong>
+                                            <small>For existing corporate customers with credit accounts</small>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="terms-agreement" required>
+                                    <span class="checkmark"></span>
+                                    I agree to the terms and conditions and confirm that all information provided is accurate
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-large">Complete Purchase Order</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KTech Group</h3>
+                    <p>Your trusted partner for premium biofuel solutions in Nigeria.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="newsletter.html">Newsletter</a></li>
+                        <li><a href="purchase.html">Purchase</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📞 08158605767 | 07038145620</p>
+                    <p>📱 @ecooil_energy</p>
+                    <p>📱@ktechgroup</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KTech Group. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for fuel selection and price calculation
+        document.addEventListener('DOMContentLoaded', function() {
+            const fuelCards = document.querySelectorAll('.fuel-card');
+            const selectedFuelInput = document.getElementById('selected-fuel');
+            const quantityInput = document.getElementById('fuel-quantity');
+            let selectedPrice = 0;
+
+            fuelCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    fuelCards.forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+                    
+                    const fuelType = this.dataset.fuel;
+                    const price = this.dataset.price;
+                    selectedPrice = parseInt(price);
+                    
+                    selectedFuelInput.value = fuelType.charAt(0).toUpperCase() + fuelType.slice(1);
+                    document.getElementById('summary-fuel').textContent = selectedFuelInput.value;
+                    document.getElementById('summary-price').textContent = '₦' + price;
+                    
+                    updateTotal();
+                });
+            });
+
+            quantityInput.addEventListener('input', function() {
+                document.getElementById('summary-quantity').textContent = this.value + ' liters';
+                updateTotal();
+            });
+
+            function updateTotal() {
+                const quantity = parseInt(quantityInput.value) || 0;
+                const subtotal = quantity * selectedPrice;
+                const deliveryFee = 5000;
+                const total = subtotal + deliveryFee;
+
+                document.getElementById('summary-subtotal').textContent = '₦' + subtotal.toLocaleString();
+                document.getElementById('summary-total').textContent = '₦' + total.toLocaleString();
+            }
+        });
+    </script>
+</body>
+</html>
